@@ -1,0 +1,32 @@
+
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Bill: {{billID}}</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Bill: {{billID}}</li>
+            </ul>
+        </div>
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+    
+<!--  Show the Bill -->
+<div class="container">
+ 	<div class="row">
+		<div class="col-md-4">
+			<p>&nbsp;</p>
+		</div>
+	</div>
+	<!-- 
+	<span data-vt-bill vtBill="bill" vtTemplate="Detail"></span>
+	 -->
+	<span data-vt-bill vtPrimaryKey="billID" vtTemplate="Detail" vtSetPageTitle=true></span>
+
+<!-- 
+<hr>
+<h4>Debug:</h4>
+<pre>{{ bill | json }}</pre>
+<pre>{{ amendments | json }}</pre>
+ -->
+</div>

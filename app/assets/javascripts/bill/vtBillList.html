@@ -1,0 +1,34 @@
+	<!-- Display List of Bills  -->
+	<div data-ng-switch="helper.isListPopulated(bills)" data-ng-cloak>
+		<div data-ng-switch-when="true">
+			<div data-ng-switch="helper.isPopulated(showTitle())" data-ng-cloak>
+				<div data-ng-switch-when="true">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="headline margin-bottom-15">
+								<h4>{{showTitle()}}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		 	<div data-ng-repeat="bill in bills" data-ng-cloak >
+				<span data-vt-bill vtBill="bill" vtTemplate="{{template}}"></span>
+			</div>
+	
+			<!--  Ask to Show More  -->
+			<div data-ng-if="helper.showPagination(currentPage, maxRangeSize, itemsPerPage, total)">
+        		<ul class="pager text-center">
+            		<li><a class="rounded-4x" href ng-click="nextPage()">&dArr;&nbsp;More&nbsp;&dArr;</a></li>
+        		</ul>		
+			</div>
+		</div>
+	</div>
+
+<!--  
+<hr>
+<h4>Debug:</h4>
+<pre>{{ bills | json }}</pre>
+</div>
+-->
